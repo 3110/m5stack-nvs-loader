@@ -1,10 +1,8 @@
 #pragma once
 
-#include <FS.h>
 #include <Preferences.h>
-#include <SPIFFS.h>
 
-#include "Debug.h"
+#include "SPIFFSLoader.h"
 
 class NVSLoader {
 public:
@@ -18,13 +16,10 @@ public:
 protected:
     virtual bool load(const char* path);
     virtual bool parse(const char* buf, size_t size);
-    virtual bool readFile(const char* path, char* buf, size_t size);
-    virtual bool removeFile(const char* path);
 
 private:
-    static const bool FORMAT_SPIFFS_IF_FAILED = true;
     static const size_t NVS_NAMESPACE_LEN = 15;
-
-    Preferences prefs;
     char NAMESPACE[NVS_NAMESPACE_LEN + 1];
+    Preferences _prefs;
+    SPIFFSLoader _loader;
 };
