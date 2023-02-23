@@ -11,7 +11,6 @@ public:
     virtual ~SPIFFSLoader(void);
 
     virtual bool begin(void);
-    virtual bool load(const char* path);
     virtual bool exists(const char* path);
     virtual bool readFile(const char* path, char* buf, size_t size);
     virtual bool removeFile(const char* path);

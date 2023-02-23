@@ -16,14 +16,6 @@ bool SPIFFSLoader::begin(void) {
     return true;
 }
 
-bool SPIFFSLoader::load(const char* path) {
-    if (path == nullptr) {
-        SERIAL_PRINTLN("path is null");
-        return false;
-    }
-    return true;
-}
-
 bool SPIFFSLoader::exists(const char* path) {
     if (path == nullptr) {
         SERIAL_PRINTLN("path is null");
